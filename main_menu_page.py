@@ -8,7 +8,6 @@ customtkinter.set_appearance_mode("System")  # Modes: system (default), light, d
 customtkinter.set_default_color_theme("green")  # Themes: blue (default), dark-blue, green
 
 
-
 w = customtkinter.CTk()  
 w.geometry("1280x720")
 w.title('Welcome')

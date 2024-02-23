@@ -104,6 +104,5 @@ login_btn = customtkinter.CTkButton(master=frame,height=20 ,width=70, text="Logi
 login_btn.place(x=212, y=350)
 
 
-# You can easily integrate authentication system 
 
 signup_app.mainloop()
