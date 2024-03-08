@@ -10,8 +10,9 @@ customtkinter.set_appearance_mode("System")  # Modes: system (default), light, d
 customtkinter.set_default_color_theme("green")  # Themes: blue (default), dark-blue, green
 
 signup_app = customtkinter.CTk()  #creating cutstom tkinter window
-signup_app.geometry("600x440")
+signup_app.geometry("800x640+350+50")
 signup_app.title('Sign Up')
+signup_app.iconbitmap('images/logo.ico')
 
 
 def signup_button_function():
@@ -20,7 +21,7 @@ def signup_button_function():
     confirm_password_input = signup_cnf_password.get()
     
     
-    if username_input is '' or password_input is '' or confirm_password_input is '':
+    if username_input == '' or password_input == '' or confirm_password_input == '':
         messagebox.showerror(title='Error',message="Fields can't be empty")
         return
     
