@@ -8,12 +8,11 @@ import ast
 customtkinter.set_appearance_mode("System")  # Modes: system (default), light, dark 
 customtkinter.set_default_color_theme("green")  # Themes: blue (default), dark-blue, green
 
-
 def login_button_function():
     username_input = username.get()
     password_input = hashlib.sha256(password.get().encode()).hexdigest()
 
-    if username_input is '' or password_input is '':
+    if username_input == '' or password_input == '':
         messagebox.showerror(title='Error',message="Fields can't be empty")
         return
 
@@ -28,17 +27,17 @@ def login_button_function():
     else:
         messagebox.showerror("Authentication Failed", "Invalid username or password.")
 
-
 def signup_fun():
     login_app.destroy()
     import signup_page
 
+def switch_event():
+    pass
 
 login_app = customtkinter.CTk()  #creating cutstom tkinter window
-login_app.geometry("600x440")
+login_app.geometry("800x640+350+50") 
 login_app.title('Login')
-
-
+login_app.iconbitmap('images/logo.ico')
 img1=ImageTk.PhotoImage(Image.open("./images/doddle.png"))
 l1=customtkinter.CTkLabel(master=login_app,image=img1)
 l1.pack()
@@ -46,6 +45,12 @@ l1.pack()
 #creating custom frame
 frame=customtkinter.CTkFrame(master=l1, width=330, height=380, corner_radius=15)
 frame.place(relx=0.5, rely=0.5, anchor=tkinter.CENTER)
+
+dark=customtkinter.CTkFrame(master=login_app,width=50,height=30)
+dark.place(x=600,y=30)
+
+label = customtkinter.CTkLabel(master=dark, text="CTkLabel")
+label.place(x=600,y=30)
 
 l2=customtkinter.CTkLabel(master=frame, text="Log into your Account",font=('Century Gothic',22))
 l2.place(x=50, y=45)
